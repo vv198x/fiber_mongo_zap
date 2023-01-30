@@ -1,0 +1,10 @@
+{{template "menu" .}}
+<div class="container">
+    <form action="/dec/add" enctype="multipart/form-data" method="POST" class="mb-3">
+        <label for="file" class="form-label">Загрузить несколько xml</label><br>
+        <input class="form-control form-control-sm" name="files" id="file" type="file" multiple><br>
+
+        <input type="submit" value="Загрузить" class="btn btn-primary">
+    </form>
+</div>
+
