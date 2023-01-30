@@ -4,6 +4,7 @@ import (
 	"context"
 	"fiber_mongo_zap/configs"
 	"fiber_mongo_zap/logger"
+	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

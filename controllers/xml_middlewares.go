@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"XMLparse/logger"
-	"XMLparse/models"
 	"context"
 	"encoding/xml"
+	"fiber_mongo_zap/logger"
+	"fiber_mongo_zap/models"
 	"fmt"
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
