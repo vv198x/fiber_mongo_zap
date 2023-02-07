@@ -13,7 +13,7 @@ var L *zap.Logger
 
 // Логирование в файл и stdout
 func Zap(defaultLogLevel zapcore.Level) *zap.Logger {
-	os.MkdirAll("./log", os.ModePerm)
+	os.MkdirAll("./log", os.ModePerm) //nolint
 	config := zap.NewProductionEncoderConfig()
 	config.EncodeTime = zapcore.ISO8601TimeEncoder
 	fileEncoder := zapcore.NewJSONEncoder(config)
@@ -29,17 +29,17 @@ func Zap(defaultLogLevel zapcore.Level) *zap.Logger {
 }
 
 func Info(msg ...any) {
-	L.Info(fmt.Sprint(msg))
+	L.Info(fmt.Sprint(msg)) //nolint
 }
 
 func Debug(msg ...any) {
-	L.Debug(fmt.Sprint(msg))
+	L.Debug(fmt.Sprint(msg)) //nolint
 }
 
 func Error(msg ...any) {
-	L.Error(fmt.Sprint(msg))
+	L.Error(fmt.Sprint(msg)) //nolint
 }
 
 func Fatal(msg ...any) {
-	L.Fatal(fmt.Sprint(msg))
+	L.Fatal(fmt.Sprint(msg)) //nolint
 }
