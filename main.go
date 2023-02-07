@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	//Передаю логлевел
+	//Передаем логлевел
 	logger.L = logger.Zap(zapcore.DebugLevel)
 	defer logger.L.Sync()
 
@@ -28,11 +28,15 @@ func main() {
 		Views:        engine,
 	})
 
+	//Логирование файбер в зап
 	app.Use(fiberzap.New(fiberzap.Config{
 		Logger: logger.L,
 	}))
 
 	configs.ConnectDB()
+
+	//Добавляем индекс в MongoDB для быстрого выполнения запроса
+	configs.CreateIndex()
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Redirect("/dec", http.StatusPermanentRedirect)

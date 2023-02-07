@@ -43,7 +43,8 @@ func GetAllDeclaration(c *fiber.Ctx) error {
 			logger.Error("mongo err", err)
 		}
 
-		logger.Debug(result)
+		//Результат
+		logger.Info(result)
 	}
 
 	if err := cursor.Err(); err != nil {

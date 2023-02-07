@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  mongodb_container:
+    image: mongo:4.4.6
+    networks:
+      - backend
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    expose:
+      - "27017"
+    volumes:
+      - .:/data
+  user:
+    build: .
+    networks:
+      - frontend
+    depends_on:
+      - "mongodb_container"
+    environment:
+      MONGOURI: "mongodb://root:rootpassword@mongodb_container:27017/"
+      SERVICE_PORT: ":8000"
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+    volumes:
+      - .:/log
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

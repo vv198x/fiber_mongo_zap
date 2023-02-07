@@ -29,7 +29,7 @@ func CheckXml(c *fiber.Ctx) error {
 				return fiber.NewError(fiber.StatusBadRequest, "Неверный формат xml")
 			}
 			pos = append(pos, po)
-			logger.Info(fmt.Sprintf("Purchase order number: %s, order date: %s\n", po.PurchaseOrderNumber, po.OrderDate))
+			logger.Debug(fmt.Sprintf("Purchase order number: %s, order date: %s\n", po.PurchaseOrderNumber, po.OrderDate))
 		}
 
 		c.Locals("dec", &pos)
@@ -47,7 +47,6 @@ func CheckXml(c *fiber.Ctx) error {
 
 		//Записываю в базу
 		return func(c *fiber.Ctx, pos *[]models.PurchaseOrder) error {
-			//добавить ожидание
 			mongo := models.Mongo{
 				ID:   primitive.NewObjectID(),
 				Decs: *pos,
