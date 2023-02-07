@@ -1,0 +1,35 @@
+ <?xml version="1.0"?>
+<PurchaseOrder PurchaseOrderNumber="11503" OrderDate="2010-12-19">
+  <Address Type="Shipping">
+    <Name>John Doe</Name>
+    <Street>456 Pine Street</Street>
+    <City>Sunny Valley</City>
+    <State>NY</State>
+    <Zip>23456</Zip>
+    <Country>USA</Country>
+  </Address>
+  <Address Type="Billing">
+    <Name>Jane Doe</Name>
+    <Street>789 Oak Avenue</Street>
+    <City>New Town</City>
+    <State>WA</State>
+    <Zip>34567</Zip>
+    <Country>USA</Country>
+  </Address>
+  <DeliveryNotes>Please leave packages at the front door.</DeliveryNotes>
+  <Items>
+    <Item PartNumber="672-BB">
+      <ProductName>Gas Grill</ProductName>
+      <Quantity>3</Quantity>
+      <USPrice>228.99</USPrice>
+      <Comment>Confirm this is propane</Comment>
+    </Item>
+    <Item PartNumber="826-CC">
+      <ProductName>Bluetooth Headphones</ProductName>
+      <Quantity>1</Quantity>
+      <USPrice>59.99</USPrice>
+      <ShipDate>2010-08-22</ShipDate>
+    </Item>
+  </Items>
+</PurchaseOrder>
+

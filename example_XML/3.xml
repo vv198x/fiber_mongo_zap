@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PurchaseOrder PurchaseOrderNumber="85397" OrderDate="2001-02-17">
+  <Address Type="Shipping">
+    <Name>Olivia Patel</Name>
+    <Street>45 Sunrise Boulevard</Street>
+    <City>Little Rock</City>
+    <State>AR</State>
+    <Zip>72203</Zip>
+    <Country>USA</Country>
+  </Address>
+  <Address Type="Billing">
+    <Name>Samantha Kim</Name>
+    <Street>9 Cherry Lane</Street>
+    <City>Providence</City>
+    <State>RI</State>
+    <Zip>02906</Zip>
+    <Country>USA</Country>
+  </Address>
+  <DeliveryNotes>Please call before delivering packages.</DeliveryNotes>
+  <Items>
+    <Item PartNumber="514-AB">
+      <ProductName>Microwave Oven</ProductName>
+      <Quantity>1</Quantity>
+      <USPrice>69.99</USPrice>
+      <Comment>Please check the voltage</Comment>
+    </Item>
+    <Item PartNumber="616-CD">
+      <ProductName>Vacuum Cleaner</ProductName>
+      <Quantity>2</Quantity>
+      <USPrice>99.98</USPrice>
+      <ShipDate>2001-03-01</ShipDate>
+    </Item>
+  </Items>
+</PurchaseOrder>
+ 
