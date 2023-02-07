@@ -16,7 +16,7 @@ import (
 func main() {
 	//Передаем логлевел
 	logger.L = logger.Zap(zapcore.DebugLevel)
-	defer logger.L.Sync()
+	defer logger.L.Sync() //nolint
 
 	// embedded fs
 	engine := html.NewFileSystem(http.Dir("./templates"), ".htm")
