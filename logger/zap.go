@@ -15,7 +15,10 @@ var L *zap.Logger
 func Zap(defaultLogLevel zapcore.Level) *zap.Logger {
 	os.MkdirAll("./log", os.ModePerm) //nolint
 	config := zap.NewProductionEncoderConfig()
-	config.EncodeTime = zapcore.ISO8601TimeEncoder
+	config.EncodeTime = func(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
+		enc.AppendString(t.Format("2006-01-02 15:04:05"))
+	}
+	config.CallerKey = ""
 	fileEncoder := zapcore.NewJSONEncoder(config)
 	consoleEncoder := zapcore.NewConsoleEncoder(config)
 	logFilePath := filepath.Join("./log", time.Now().Format("06.01.02")+".log")
